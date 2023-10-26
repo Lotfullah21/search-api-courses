@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Machine Learning",
+    "price": 7.99,
+    "featured": true,
+    "rating": 4.8,
+    "e_learning_providers": "Coursera"
+  },
+  {
+    "name": "Artificial Intelligence",
+    "price": 9.99,
+    "featured": false,
+    "rating": 4.7,
+    "e_learning_providers": "Udemy"
+  },
+  {
+    "name": "Web Development",
+    "price": 5.49,
+    "featured": true,
+    "rating": 4.9,
+    "e_learning_providers": "MIT Open Learning"
+  },
+  {
+    "name": "Data Science",
+    "price": 8.75,
+    "featured": false,
+    "rating": 4.6,
+    "e_learning_providers": "Stanford Online"
+  },
+  {
+    "name": "Computer Vision",
+    "price": 6.25,
+    "featured": true,
+    "rating": 4.5,
+    "e_learning_providers": "Cornell University"
+  },
+  {
+    "name": "Cybersecurity",
+    "price": 8.0,
+    "featured": true,
+    "rating": 4.4,
+    "e_learning_providers": "Carnegie Mellon University"
+  },
+  {
+    "name": "Mobile App Development",
+    "price": 4.99,
+    "featured": false,
+    "rating": 4.3,
+    "e_learning_providers": "Coursera"
+  },
+  {
+    "name": "Blockchain",
+    "price": 7.5,
+    "featured": true,
+    "rating": 4.9,
+    "e_learning_providers": "Udemy"
+  },
+  {
+    "name": "Software Engineering",
+    "price": 6.99,
+    "featured": true,
+    "rating": 4.8,
+    "e_learning_providers": "MIT Open Learning"
+  },
+  {
+    "name": "Cloud Computing",
+    "price": 5.0,
+    "featured": false,
+    "rating": 4.7,
+    "e_learning_providers": "Stanford Online"
+  },
+  {
+    "name": "Deep Learning",
+    "price": 9.49,
+    "featured": false,
+    "rating": 4.6,
+    "e_learning_providers": "Cornell University"
+  },
+  {
+    "name": "Natural Language Processing",
+    "price": 7.25,
+    "featured": true,
+    "rating": 4.9,
+    "e_learning_providers": "Carnegie Mellon University"
+  },
+  {
+    "name": "Data Analytics",
+    "price": 6.75,
+    "featured": true,
+    "rating": 4.8,
+    "e_learning_providers": "Coursera"
+  },
+  {
+    "name": "IoT Development",
+    "price": 4.5,
+    "featured": false,
+    "rating": 4.7,
+    "e_learning_providers": "Udemy"
+  },
+  {
+    "name": "Robotics",
+    "price": 8.99,
+    "featured": true,
+    "rating": 4.5,
+    "e_learning_providers": "MIT Open Learning"
+  }
+]
