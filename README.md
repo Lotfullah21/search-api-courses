@@ -87,3 +87,116 @@ const newProperties = { ...myEmptyObject, name: "ahmad", age: 25 };
 
 console.log(newProperties); // {name:"ahmad",age:25}
 ```
+
+## Sort
+
+getting the response in sorted manner does not effect the amount of data we are returning, it is just the ordering matter.
+
+```js
+const page = Number(req.query.page) || 1;
+const limit = Number(req.query.limit) || 10;
+const skip = (page - 1) \* limit;
+output = output.skip(skip).limit(limit);
+```
+
+## limit,skip
+
+but they are commonly used methods in the context of database queries, especially when working with databases like MongoDB through an ORM (Object-Relational Mapping) library like Mongoose for Node.js.
+
+limit: The limit method is used to restrict the number of documents that are returned by a database query.
+
+skip: The skip method is used to skip a specified number of documents in the result set. It is often used in combination with limit to implement pagination.
+
+By skipping a certain number of documents based on the current page and the limit per page, you can navigate through the dataset in a paginated manner.
+
+The limit and skip operations in the context of database queries are usually used for pagination. The limit specifies how many documents should be returned per page, and the skip specifies how many documents should be skipped to get to the current page.
+
+When you set limit to 2, it means that each page should contain at most 2 documents.
+When you set page to 2, you're requesting the second page of results.
+
+## Regular Expressions
+
+Regular expressions, often referred to as "regex" or "regexp," are powerful tools for working with text patterns. They allow you to search for, match, and manipulate strings based on specific patterns or rules. Regex patterns are composed of a combination of regular characters and special meta characters.
+
+#### Word Boundaries:
+
+Word boundaries in regular expressions are positions in a text where a word character (typically a letter, digit, or underscore) is adjacent to a non-word character (anything that's not a word character). Word boundaries do not consume characters; they are positions or assertions in the text.
+
+###### Using \b for Whole Word Matching:
+
+You can use the \b meta character to ensure that a pattern only matches when it appears as a standalone word, not as part of a larger word or sequence of characters. This is often useful for precise text matching.
+
+For example, if you want to match the word "pen" as a whole word in a sentence, you can use the regex pattern `\bpen\b`. It ensures that "pen" is matched only when it is a standalone word, and not part of another word.
+
+```js
+const text = "pen is good and pendrive is better, pen is used for writing";
+const pattern = /\bpen\b/;
+
+const result = text.match(pattern);
+console.log(result); // Output: ["pen"]
+```
+
+`b` is used for precise word matching.
+when we do not use `g`, the output would be only the first matched.
+
+```js
+const text = "pen is good and pendrive is better, pen is used for writing";
+const pattern = /\bpen\b/g;
+
+const result = text.match(pattern);
+console.log(result); // Output: ["pen", "pen"]
+```
+
+if `g` (global) is used, we want to search through all words and return if there are more matches.
+
+```js
+const text = "pen is good and pendrive is better, pen is used for writing";
+const pattern = /\pen\/g;
+
+const result = text.match(pattern);
+console.log(result); // Output: ["pen", "pen","pen"]
+```
+
+if `b` (boundary) is not used, then it won't look for standalone words, and will match even if the pattern is sub-word of another word.
+
+# replace()
+
+replace method is a built-in JavaScript method used to replace substrings within a string. It allows you to search for a specific substring or a regular expression pattern within a given string and replace it with a specified replacement string or function. Here's how the replace method works:
+
+`newString = originalString.replace(searchValue, replaceValue) `
+
+`originalString`: it is the string we are looking for the pattern and changes will be applied to this.
+`searchValue`: it is the pattern or substring we are looking for in originalString
+`replaceValue`: it is the value or string that will be used in replacement to the matched string.
+It can be a string or a function. If it's a string, only the first occurrence will be replaced. If it's a function, it's called for each match and allows you to perform custom replacements.
+
+## simple case
+
+just look for `pen` in originalString, if found, replace it with `Knowledge`
+
+```js
+const originalString = "pen, changes the world!";
+const newString = originalString.replace("pen", "knowledge");
+
+console.log(newString); // Output: "Hello, universe!"
+```
+
+## global case
+
+just look for `pen` in originalString, if found, replace it with `Knowledge`
+
+```js
+const originalString = "pen, changes the world!, pen is good";
+const newString = originalString.replace(/pen/g, "knowledge");
+
+console.log(newString); // Output: "Hello, universe!"
+```
+
+```js
+const originalString = "pen, changes the world!, pen is good";
+const newString = originalString.replace(/pen/g, (found) => found.upperCase());
+
+console.log(newString); // Output: "PEN, changes the world!, PEN is good"
+```
+
+look for this pattern if found, apply `upperCase()` to each of the matched patterns.
