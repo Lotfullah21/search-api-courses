@@ -26,7 +26,6 @@ const getAllCourses = async (req, res) => {
 
   if (sort) {
     sortList = sort.split(",").join(" ");
-    console.log(sortList);
     output = output.sort(sortList);
   } else {
     output = output.sort("created_date");
@@ -51,8 +50,6 @@ const getAllCourses = async (req, res) => {
       regex,
       (match) => `-${operators[match]}-`
     );
-    console.log(numericFilters);
-    console.log(filters);
 
     const options = ["price", "rating"];
     filters = filters.split(",").forEach((item) => {
@@ -60,20 +57,15 @@ const getAllCourses = async (req, res) => {
       if (options.includes(field)) {
         queryObject[field] = { [operator]: Number(value) };
       }
-      console.log("Field", field);
-      console.log("operator", operator);
-      console.log("value", value);
-      console.log(queryObject);
     });
   }
-
+  console.log(queryObject);
   output = output.skip(skip).limit(limit);
   // find the courses based on the new query properties present in queryObject.s
   const courses = await output;
 
   res.status(200).json({ courses, nbHits: courses.length });
 };
-
 const getSingleCourse = async (req, res) => {
   res.status(200).json({ msg: "SINGLE PRODUCT" });
 };
